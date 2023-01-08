@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/485171ad74.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
     <title>Take Notes</title>
 </head>
 
@@ -13,35 +15,55 @@
     <div class="container">
         <h1>Take Notes</h1>
         <div class="form-div">
-            <form action="index.php" method="POST" class="form">
-                <input type="text" name="title" placeholder="Title" class="input">
-                <textarea name="content" id="" cols="30" rows="10" placeholder="Content"></textarea>
-                <button type="submit" name="submit" class="submit">Submit</button>
+            <form class="form">
+                <input type="text" name="title" placeholder="Title" id="input">
+                <textarea name="content" id="content" cols="30" rows="10" placeholder="Content"></textarea>
+                <button name="submit" id="submit">Submit</button>
+
             </form>
         </div>
         <div class="saved-notes">
-            <h2>Your Notes</h2>
-            <div class="notes">
-                <div class="note">
+            <div class="saved-notes-header">
+                <h2>Your Notes</h2>
+                <i class="fa-sharp fa-solid fa-trash" id="remove-all"></i>
+            </div>
+            <div class="notes" id="notes">
+                <!-- <div class="note">
                     <h3>Note Title</h3>
                     <span></span>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    <div class="icons">
+                        <i class="fa-sharp fa-solid fa-pen-to-square" id="edit"></i>
+                        <i class="fa-sharp fa-solid fa-trash" id="delete"></i>
+                    </div>
                 </div>
                 <div class="note">
                     <h3>Note Title</h3>
                     <span></span>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    <div class="icons">
+                        <i class="fa-sharp fa-solid fa-pen-to-square" id="edit"></i>
+                        <i class="fa-sharp fa-solid fa-trash" id="delete"></i>
+                    </div>
                 </div>
                 <div class="note">
                     <h3>Note Title</h3>
                     <span></span>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                    <div class="icons">
+                        <i class="fa-sharp fa-solid fa-pen-to-square edit" id="edit"></i>
+                        <i class="fa-sharp fa-solid fa-trash remove" id="delete"></i>
+                    </div>
                 </div>
                 <div class="note">
                     <h3>Note Title</h3>
                     <span></span>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                </div>
+                    <div class="icons">
+                        <i class="fa-sharp fa-solid fa-pen-to-square" id="edit"></i>
+                        <i class="fa-sharp fa-solid fa-trash" id="delete"></i>
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>

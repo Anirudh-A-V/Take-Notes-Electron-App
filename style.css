@@ -94,10 +94,24 @@ body {
     max-width: 1000px; 
 }
 
-.saved-notes h2 {
+.saved-notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.saved-notes-header h2 {
     font-size: 2rem;
     color: #333;
     margin-top: 2rem;
+}
+
+.saved-notes-header i {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 2rem;
+    cursor: pointer;
 }
 
 .notes {
@@ -140,6 +154,20 @@ body {
     height: 1px;
     background-color: #ccc;
     margin-bottom: 1rem;
+}
+
+.icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.icons i {
+    font-size: 1.1rem;
+    color: #333;
+    margin-left: 1rem;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 450px) {
