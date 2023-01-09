@@ -38,14 +38,15 @@ const renderNotes = () => {
             </div>
         `
         note.className = 'note'
+        note.id = notes.indexOf(item)
         notesList.appendChild(note)
     })
 }
 
-const removeNote = (title) => {
+const removeNote = (index) => {
     const notes = getNotes()
-    const filteredNotes = notes.filter(note => note.title !== title)
-    localStorage.setItem('notes', JSON.stringify(filteredNotes))
+    notes.splice(index, 1)
+    localStorage.setItem('notes', JSON.stringify(notes))
     renderNotes()
 }
 
@@ -67,8 +68,8 @@ removeAllBtn.addEventListener('click', () => {
 
 for (let i = 0; i < removeBtn.length; i++) {
     removeBtn[i].addEventListener('click', (e) => {
-        const note = e.target.parentElement.parentElement.children[0].innerText
-        removeNote(note)
+        const index = e.target.parentNode.parentNode.id
+        removeNote(index)
     })
 }
 
