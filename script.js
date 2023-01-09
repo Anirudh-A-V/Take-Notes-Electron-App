@@ -33,7 +33,7 @@ const renderNotes = () => {
             <span></span>
             <p>${item.content}</p>
             <div class="icons">
-                <i class="fa-sharp fa-solid fa-pen-to-square" id="edit"></i>
+                <i class="fa-sharp fa-solid fa-pen-to-square edit" id="edit"></i>
                 <i class="fa-sharp fa-solid fa-trash remove" id="delete"></i>
             </div>
         `
@@ -70,6 +70,34 @@ for (let i = 0; i < removeBtn.length; i++) {
     removeBtn[i].addEventListener('click', (e) => {
         const index = e.target.parentNode.parentNode.id
         removeNote(index)
+    })
+}
+
+const updateBtn = document.getElementById('update')
+
+const editNote = (index) => {
+    const notes = getNotes()
+    const note = notes[index]
+    title.value = note.title
+    content.value = note.content
+    addBtn.style.display = 'none'
+    updateBtn.style.display = 'flex'
+    updateBtn.addEventListener('click', () => {
+        note.title = title.value
+        note.content = content.value
+        localStorage.setItem('notes', JSON.stringify(notes))
+        addBtn.style.display = 'flex'
+        updateBtn.style.display = 'none'
+        renderNotes()
+    })
+}
+
+const editBtn = document.getElementsByClassName('edit')
+
+for (let i = 0; i < editBtn.length; i++) {
+    editBtn[i].addEventListener('click', (e) => {
+        const index = e.target.parentNode.parentNode.id
+        editNote(index)
     })
 }
 

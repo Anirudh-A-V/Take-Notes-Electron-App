@@ -79,6 +79,14 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+#submit {
+    display: flex;
+}
+
+#update {
+    display: none;
+}
+
 .form button:hover {
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
