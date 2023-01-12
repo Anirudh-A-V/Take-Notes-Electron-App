@@ -14,6 +14,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .container h1 {
@@ -188,6 +189,8 @@ body {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
@@ -200,6 +203,13 @@ body {
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
+    height: 150px;
+}
+
+.modal-content h2 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.7rem;
 }
 
 .modal-buttons {
@@ -244,6 +254,11 @@ body {
     .saved-notes {
         max-width: 350px;
     }
+    .modal-content
+    {
+        width: 90%;
+        height: 200px;
+    }
 }
 
 @media screen and (min-width: 500px) and (max-width: 900px) {
@@ -252,5 +267,10 @@ body {
     }
     .saved-notes {
         max-width: 700px;
+    }
+    .modal-content
+    {
+        width: 70%;
+        height: 200px;
     }
 }

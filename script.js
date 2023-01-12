@@ -59,17 +59,40 @@ if (localStorage.getItem('notes')) {
     renderNotes()
 }
 
+const modal_all = document.getElementsByClassName('modal')[0]
+const modal = document.getElementsByClassName('modal')[1]
+
+const yes_all = document.getElementById('yes-all')
+const no_all = document.getElementById('no-all')
+const yes = document.getElementById('yes')
+const no = document.getElementById('no')
+
+
 const removeBtn = document.getElementsByClassName('remove')
 const removeAllBtn = document.getElementById('remove-all')
 
 removeAllBtn.addEventListener('click', () => {
-    removeAllNotes()
+    modal_all.style.display = 'flex'
+    yes_all.addEventListener('click', () => {
+        removeAllNotes()
+        modal_all.style.display = 'none'
+    })
+    no_all.addEventListener('click', () => {
+        modal_all.style.display = 'none'
+    })
 })
 
 for (let i = 0; i < removeBtn.length; i++) {
     removeBtn[i].addEventListener('click', (e) => {
-        const index = e.target.parentNode.parentNode.id
-        removeNote(index)
+        modal.style.display = 'flex'
+        yes.addEventListener('click', () => {
+            const index = e.target.parentNode.parentNode.id
+            removeNote(index)
+            modal.style.display = 'none'
+        })
+        no.addEventListener('click', () => {
+            modal.style.display = 'none'
+        })
     })
 }
 
